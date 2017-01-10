@@ -36,7 +36,7 @@ feelLink = () ->
 
   jQuery.each t, (i, val) ->
     if val.match(regex)
-      #console.log val
+#console.log val
       html = html.replace(val, '<a href=\'' + val + '\'>' + val + '</a>')
     return
   $('div.conversation-messages div:last-child').last().html html
@@ -115,7 +115,6 @@ $(document).ready ->
     $('#myModal').modal 'show'
     return
   )
-
 
 
 
