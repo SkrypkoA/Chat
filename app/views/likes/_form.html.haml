@@ -3,12 +3,5 @@
 %p{class: "likes_count"}
   = @picture.likes.count
 - if user_signed_in?
-  -# unless @picture.likes.find_by(user: current_user)
   .likes
     = render 'likes/button'
-  -# if @picture.likes.find_by(user: current_user)
-    %section
-      = button_to "unlike", picture_like_path(@picture), method: :delete, class: "like_button"
-  -# else
-    %section
-      = button_to "like", picture_likes_path(@picture), method: :post, class: "like_button"

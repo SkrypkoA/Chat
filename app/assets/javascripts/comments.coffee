@@ -16,7 +16,5 @@ $(document).ready ->
     enable_button = ->
       $( '.comment_button' ).removeAttr('disabled')
       return
-    #$(this).removeAttr('disabled').delay(5000)
     setTimeout(enable_button, 5000)
-    #  return
     return

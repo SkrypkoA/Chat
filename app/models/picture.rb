@@ -1,6 +1,6 @@
 class Picture < ApplicationRecord
   mount_uploader :location, AvatarUploader
-  paginates_per 5
+  #paginates_per 5
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   belongs_to :category

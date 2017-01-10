@@ -7,7 +7,4 @@ class Category < ApplicationRecord
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   default_scope  { order(:name) }
 
-  # def should_generate_new_friendly_id?
-  #   name_changed? || super
-  # end
 end

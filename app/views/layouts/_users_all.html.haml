@@ -1,7 +1,8 @@
-.users_all.col-md-12
-  .user-list.col-md-10
-    %ul{class: "left-panel nav  nav-pills nav-stacked pull-left"}
-      - @users_all.each do |user|
-        %li
-          = link_to user.email, conversations_path(user_id: user.id), {method: :post}
-  %button.hide-chat-btn.glyphicon.glyphicon-menu-right.col-md-1
+- if user_signed_in?
+  .users_all.col-md-12
+    .user-list.col-md-10
+      %ul{class: "left-panel nav  nav-pills nav-stacked pull-left"}
+        - @users_all.each do |user|
+          %li
+            = link_to user.email, conversations_path(user_id: user.id), {class: 'link-to-conversation', method: :post}
+    %button.hide-chat-btn.glyphicon.glyphicon-menu-right.col-md-1

@@ -2,9 +2,6 @@
 .col-md-2.col-md-offset-1
   - @users.each do |user|
     .row
-      -#= link_to user.email, conversations_create_path(user)
       = link_to user.email, conversations_path(user_id: user.id), {method: :post}
 .col-md-6.col-md-offset-1
-  -#= render 'messages/message'
   = render @messages
--#= render 'messages/form'

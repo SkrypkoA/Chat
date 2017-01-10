@@ -27,15 +27,7 @@ class PicturesController < ApplicationController
                                              category_id: pictures_params[:category_id],
                                               location: location)
     end
-    # if @picture.save!
-    #   @picture.category.users.each do |user|
-    #     UserMailer.add_picture_notification(user, @picture).deliver_later
-    #   end
-    # end
-    # picture = Picture.new(description: params[:picture][:description], user: current_user,
-    #                    category: Category.find(params[:picture][:category_id]),
-    #                     location: params[:picture][:picture_file])
-    # picture.save!
+
     redirect_to :back
   end
 

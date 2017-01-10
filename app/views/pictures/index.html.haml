@@ -1,18 +1,9 @@
 %h1{ class: "page-header" } All pictures
--#= button_to "Show pictures in groups", pictures_path, remote: true, method: :get
 #nav
   %ul{ class: "nav nav-tabs" }
     %li{ class: 'active' }
-      -#%a{ href:"#" } All
       = link_to "All", pictures_path(all: true), remote: true, method: :get
     %li{ }
       = link_to "Discussed", pictures_path(all: false), remote: true, method: :get
 %div{class: "pictures", id: "picture_show"}
   = render "pictures"
-  -#.row
-    .col-md-10.col-md-push-1
-      = paginate @pictures
-      .row
-        - @pictures.each do |picture|
-          .col-md-3.col-md-offset-1
-            = link_to image_tag(picture.location_url, class: "img-circle", height: "128", width: "128"), category_picture_path(picture.category, picture)

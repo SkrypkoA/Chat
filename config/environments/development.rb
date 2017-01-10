@@ -67,4 +67,6 @@ Rails.application.configure do
   #local
   config.i18n.available_locales = [:en, :ru]
 
+  config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
+
 end

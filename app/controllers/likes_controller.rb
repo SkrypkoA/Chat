@@ -6,11 +6,9 @@ class LikesController < ApplicationController
     @like = current_user.likes.create!(picture: @picture)
     respond_to do |format|
       format.html do
-        puts "######################################  html"
         redirect_to :back
       end
-      format.json do #{ render json: {likes_count: @picture.likes.count} }
-        puts "######################################  json"
+      format.json do
         render json: {likes_count: @picture.likes.count,
                       html: (render_to_string partial: "likes/button", layout: false, formats: [:html])}
       end

@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  #before_action :trace_event, if: :user_signed_in?
+  before_action :trace_event, if: :user_signed_in?
   before_action :set_locale
   before_action :set_users_all
 
@@ -12,9 +12,7 @@ class ApplicationController < ActionController::Base
 
     def set_locale
       cookies.permanent[:locale] = params[:locale].to_s if params[:locale]
-      #puts '###' + params[:locale].to_s
       I18n.locale = cookies[:locale] || I18n.default_locale
-      #I18n.locale = params[:local]|| I18n.default_locale
     end
 
     def set_users_all

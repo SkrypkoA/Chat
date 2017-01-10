@@ -3,18 +3,11 @@ class CategoriesController < ApplicationController
   before_action :set_new_category, only: [:create]
 
   def index
-    @categories = Category.all.preload(:users)#.order("name")
-    #@categories = Category.left_joins(:user_categories).select("categories.*, user_categories.id AS relation_id").where(user_categories: {user: current_user})
-    #@categories = Category.joins("LEFT JOIN user_categories
-    #ON categories.id = user_categories.category_id
-    #AND user_categories.user_id = ?",current_user.id).select("categories.*, user_categories.id
-    #AS relation_id")
+    @categories = Category.all.preload(:users)
   end
 
   def show
-    #@category = Category.find(params[:id])
-    # @category = Category.find(params[:id])
-    @pictures = @category.pictures.page(params[:page])
+    @pictures = @category.pictures
     @picture = @category.pictures.build
   end
 

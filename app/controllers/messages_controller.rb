@@ -6,9 +6,9 @@ class MessagesController < ApplicationController
     @users = User.all
   end
 
-  def create
-    current_user.post_message!(params[:message][:content])
-    redirect_to :back
-  end
+  # def create
+  #   current_user.post_message!(params[:message][:content])
+  #   redirect_to :back
+  # end
 
 end

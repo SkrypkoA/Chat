@@ -41,7 +41,6 @@ body {
 }
 
 h1 {
-  //padding-left: 30px;
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
@@ -49,12 +48,7 @@ h1 {
   color: forestgreen;
 }
 
-.pictures {
-  //padding-left: 50px;
-  .pagination {
-    font-size: 2em;
-  }
-}
+
 .user_mail {
   color: blue;
 }
@@ -66,6 +60,32 @@ h1 {
 .img-circle{
   height: 128px;
   width: 128px;
+}
+.img-thumbnail{
+  min-height: 50vh;
+  max-height: 50vh;
+  max-width: 50vw;
+}
+
+.msg-img{
+  min-height: 10vh;
+  max-height: 10vh;
+  max-width: 10vw;
+
+}
+.carousel{
+  max-width: 30vw;
+}
+.youtube{
+  min-height: 16vh;
+  max-height: 16vh;
+  max-width: 16vw;
+}
+.youtube-video{
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100%;
+
 }
 .users_all{
   .navbar {
@@ -84,12 +104,9 @@ h1 {
       }
     }
   }
-  //min-width: 2vw;
-  //width: 4vw;
   .user-list{
     height:100vh;
-    //visibility: hidden;
-    //width: 0px;
+    display: none;
   }
   .left-panel{
     right: auto;
@@ -97,7 +114,6 @@ h1 {
   }
   .hide-chat-btn{
     height: 100vh;
-    //max-width: 100%;
     display:block;
     text-align:center;
   }
@@ -111,12 +127,9 @@ h1 {
     border-color: lightgray;
     background-color: ghostwhite;
     .conversation-messages{
-      //padding-top: 8px;
-      //margin-top: 14px;
       height: 400px;
       width: 450px;
       overflow: scroll;
-      //overflow-wrap: normal;
       overflow-x: hidden;
       overflow-y: visible;
       border-style: solid;
@@ -125,11 +138,14 @@ h1 {
       .row{
         padding-left: 5px;
       }
+      img{
+        min-height: 10vh;
+        max-height: 10vh;
+        max-width: 10vw;
+      }
     }
     .messages{
       width: 450px;
-      //border-style: solid;
-      //border-color: royalblue;
       textarea{
       }
     }

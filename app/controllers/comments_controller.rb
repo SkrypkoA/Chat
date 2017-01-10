@@ -20,7 +20,6 @@ class CommentsController < ApplicationController
 
     def set_params
        @comment_params = params.require(:comment).permit(:content)
-      #params.permit(:picture_id, comment: [:content])
        @comment_params[:picture] = Picture.find(params[:picture_id])
     end
 end
