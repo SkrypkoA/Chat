@@ -1,11 +1,43 @@
 /<% provide(:title, 'All users') %>
 %h1
   = @category.name
-.picture
-  .row
-    .col-md-10.col-md-push-1
-      = paginate @pictures
-      %ul
-        - @pictures.each do |picture|
-          = link_to image_tag(picture.location_url, class: "img-circle"), category_picture_path(picture.category, picture)
-= render "pictures/upload"
+.picture.row
+  .center-block{id: 'picture-carousel', class: "carousel slide"}
+    -#= paginate @pictures
+    -#%ol.carousel-indicators
+      %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
+      %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
+      %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
+
+    %ol.carousel-indicators
+      - @pictures.each_with_index do |picture, index|
+        - unless picture.location_url.blank?
+          - if index == 0
+            %li.active{'data-target': "#picture-carousel", 'data-slide-to': index}
+          - else
+            %li{'data-target': "#picture-carousel", 'data-slide-to': index}
+            -#= link_to image_tag(picture.location_url, class: "img-circle"), category_picture_path(picture.category, picture)
+        -#=  picture.location_url
+    .carousel-inner{role: "listbox"}
+      - @pictures.each_with_index do |picture, index|
+        - unless picture.location_url.blank?
+          - if index == 0
+            .item.active
+              = link_to image_tag(picture.location_url, class: "img-thumbnail center-block"), category_picture_path(picture.category, picture)
+              -#%img.img-circle.center-block{src: picture.location_url}
+              -#.carousel-caption
+                = picture.location_url
+          - else
+            .item
+              = link_to image_tag(picture.location_url, class: "img-thumbnail center-block"), category_picture_path(picture.category, picture)
+              -#%img.img-circle.center-block{src: picture.location_url}
+              -#.carousel-caption
+                = picture.location_url
+    %a.left.carousel-control{"data-slide": "prev", href: "#picture-carousel", role: "button"}
+      %span.glyphicon.glyphicon-chevron-left{"aria-hidden": "true"}
+      %span.sr-only Previous
+    %a.right.carousel-control{"data-slide": "next", href: "#picture-carousel", role: "button"}
+      %span.glyphicon.glyphicon-chevron-right{"aria-hidden": "true"}
+      %span.sr-only Next
+.row
+  = render "pictures/upload"

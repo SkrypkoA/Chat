@@ -1,3 +1,14 @@
+getChatPartial = (conversation_id) ->
+  $.ajax(
+    url: "/conversations/#{conversation_id}/show_partial"
+    type: 'GET'
+    dataType: 'json').done((json) ->
+    $('.mini-chat').append(json.html)
+    $('.conversation-messages').scrollTop($('.conversation-messages').prop("scrollHeight"))
+    return
+  )
+  return
+
 $(document).ready ->
   console.log "notification ws"
   if $('.email').length > 0
@@ -21,7 +32,6 @@ $(document).ready ->
         else
           $.ajax(
             url: "/conversations/#{data['channel_id']}/show_partial"
-  #data: chat_room_id
             type: 'GET'
             dataType: 'json').done((json) ->
             $('.mini-chat').append(json.html)
@@ -45,13 +55,28 @@ $(document).ready ->
       console.log "опа"
       return false
     )
-    $("body").on("click", ".hide-chat-btn", (e) ->
-      e.preventDefault()
-      if $('.user-list').is(":visible")
-        $('.user-list').hide('fast')
-      else
-        $('.user-list').show('fast')
+  $("body").on("click", ".hide-chat-btn", (e) ->
+    e.preventDefault()
+    if $('.user-list').is(":visible")
+      $('.user-list').hide('fast')
+    else
+      $('.user-list').show('fast')
+    $('.users').toggleClass('col-md-2 col-md-1');
+    $('.body').toggleClass('col-md-11 col-md-10');
+    return false
+  )
+  $("body").on("click", ".link-to-conversation", (e) ->
+    e.preventDefault()
+    $.ajax(
+      url: $(this).attr('href')
+      type: 'POST'
+      dataType: 'json').done((json) ->
+      if $(".conversation[data-conversation = #{json.conversation_id}]").length == 0
+        getChatPartial(json.conversation_id)
+      return
     )
+    return false
+  )
 
 
 

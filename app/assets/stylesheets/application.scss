@@ -49,12 +49,12 @@ h1 {
   color: forestgreen;
 }
 
-.pictures {
-  //padding-left: 50px;
-  .pagination {
-    font-size: 2em;
-  }
-}
+//.pictures {
+//  //padding-left: 50px;
+//  .pagination {
+//    font-size: 2em;
+//  }
+//}
 .user_mail {
   color: blue;
 }
@@ -66,6 +66,14 @@ h1 {
 .img-circle{
   height: 128px;
   width: 128px;
+}
+.img-thumbnail{
+  min-height: 50vh;
+  max-height: 50vh;
+  max-width: 50vw;
+}
+.carousel{
+  max-width: 30vw;
 }
 .users_all{
   .navbar {

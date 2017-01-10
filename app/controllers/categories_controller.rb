@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
   def show
     #@category = Category.find(params[:id])
     # @category = Category.find(params[:id])
-    @pictures = @category.pictures.page(params[:page])
+    @pictures = @category.pictures#.page(params[:page])
     @picture = @category.pictures.build
   end
 

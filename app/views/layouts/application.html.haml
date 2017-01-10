@@ -9,9 +9,9 @@
     %script{src: 'https://www.google.com/recaptcha/api.js'}
   %body
     = render 'layouts/header'
-    .col-md-2
+    .users.col-md-2
       = render 'layouts/users_all'
     -#= render 'layouts/messages'
-    .col-md-10
+    .body.col-md-10
       = yield
     = render 'layouts/footer'

@@ -43,6 +43,9 @@ class ConversationsController < ApplicationController
     # end
     # cookies.permanent[:conv] = conversations.push(conversation.id).to_json
     # puts '###### CONV ' + conversation.id.to_s
-    redirect_to conversation_path(conversation)
+    respond_to do |format|
+      format.html { redirect_to conversation_path(conversation) }
+      format.json { render json: { conversation_id: conversation.id } }
+    end
   end
 end
