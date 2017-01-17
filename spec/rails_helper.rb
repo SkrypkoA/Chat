@@ -9,6 +9,9 @@ require 'devise'
 require "capybara/dsl"
 require "selenium-webdriver"
 require 'capybara/rspec'
+require 'simplecov'
+#SimpleCov.start 'rails'
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -82,7 +85,6 @@ RSpec.configure do |config|
   # config.include Devise::Test::IntegrationHelpers, type: :controller
   # config.include Devise::Test::IntegrationHelpers, type: :view
   # config.include Devise::TestHelpers, type: :controller
-  #config.include Devise::Test::ControllerHelpers
-  config.include Devise::Test::IntegrationHelpers
-
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::IntegrationHelpers, type: :feature
 end

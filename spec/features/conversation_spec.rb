@@ -1,53 +1,35 @@
-#require 'test_helper'
 require 'spec_helper'
 require 'rails_helper'
 
 
-# Capybara.register_server :puma do |app, port, host|
-#   require 'puma'
-#   Puma::Server.new(app).tap do |s|
-#     s.add_tcp_listener host, port
-#   end.run.join
-# end
+RSpec.feature "Conversation", type: :feature do
+ # include Devise::Test::IntegrationHelpers
+  before(:all) do
+    @user = FactoryGirl.create(:user)
+    @second_user = FactoryGirl.create(:second_user)
+  end
 
-# Capybara.server {|app, port|
-#   require 'puma'
-#   Puma::Server.new(app).tap do |s|
-#     s.add_tcp_listener Capybara.server_host, port
-#   end.run.join
-# }
-#class ConversationTest < ActionDispatch::IntegrationTest
-RSpec.feature "Conversation" do
-  include Devise::Test::IntegrationHelpers
-  #subject { page }
+  after(:all) do
+    User.delete_all
+    Conversation.delete_all
+  end
 
   describe "home page", js: true, type: :feature do
     before do
-      #using_wait_time(10)
-      sign_in User.first
+      sign_in @user
       visit root_path
-
     end
 
     it "should create a message" do
       expect(find(:css, 'div.user-list').visible?).to be false
       find(:css,'.hide-chat-btn').click
-      #find(:css, '.user-list').visible?
-      #puts find(:css, '.user-list').visible?
-      #       using_wait_time(10) do
-      click_link('ixsiwat@gmail.com')
-      #find('ixsiwat@gmail.com').click
-      #end
+      click_link(@second_user.email)
       find('#dropdownMenu2').click
       expect(find('.user-list').visible?).to be true
       fill_in ("message_content"), with: "some message"
-      puts "###"+ find(".message_content").text
       find('input.message_button').click
-      #sleep 140.0
-      puts Message.count
       expect { find('input.message_button').click}.to change(Message, :count).by(1)
+      sleep(5)
     end
   end
 end
-
-#end
