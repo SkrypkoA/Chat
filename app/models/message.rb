@@ -4,5 +4,5 @@ class Message < ApplicationRecord
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 100 }
   validates :conversation_id, presence: true
-  after_create_commit { MessageBroadcastJob.perform_later(self) }
+  after_create_commit { MessageBroadcastJob.perform_now(self) }
 end

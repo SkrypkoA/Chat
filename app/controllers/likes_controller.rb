@@ -20,7 +20,7 @@ class LikesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to :back }
       format.json { render json: { likes_count: @picture.likes.count,
-                                  html: (render_to_string partial: "likes/button", layout: false, formats: [:html])} }
+                                  html: (render_to_string partial: "likes/button", layout: false, formats: [:html]) } }
     end
   end
 

@@ -3,7 +3,6 @@ require 'rails_helper'
 
 
 RSpec.feature "Conversation", type: :feature do
- # include Devise::Test::IntegrationHelpers
   before(:all) do
     @user = FactoryGirl.create(:user)
     @second_user = FactoryGirl.create(:second_user)
@@ -28,8 +27,9 @@ RSpec.feature "Conversation", type: :feature do
       expect(find('.user-list').visible?).to be true
       fill_in ("message_content"), with: "some message"
       find('input.message_button').click
+      #sleep(140)
       expect { find('input.message_button').click}.to change(Message, :count).by(1)
-      sleep(5)
+
     end
   end
 end

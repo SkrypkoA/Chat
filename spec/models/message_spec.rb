@@ -31,10 +31,6 @@ RSpec.describe Message, type: :model do
     it { expect(@message).not_to be_valid}
   end
 
-  describe "check enqueue job after commit" do
-    it { expect{@message.save}.to have_enqueued_job(MessageBroadcastJob) }
-  end
-
   describe "check message length" do
     before { @message.content = "123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 "}
     it { expect(@message).not_to be_valid }
