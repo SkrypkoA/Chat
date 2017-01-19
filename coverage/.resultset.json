@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/skripko_a/rails_projects/chat/app/models/comment.rb": [
+      "/home/skripko_a/rails_projects/chat/app/models/category.rb": [
         1,
         1,
         1,
@@ -9,6 +9,8 @@
         1,
         1,
         1,
+        7,
+        null,
         null
       ],
       "/home/skripko_a/rails_projects/chat/app/models/picture.rb": [
@@ -20,26 +22,167 @@
         1,
         1,
         1,
-        6,
+        3,
         null,
         1,
         null,
         1,
-        0,
+        2,
         0,
         null,
         null,
         null
       ],
-      "/home/skripko_a/rails_projects/chat/app/models/category.rb": [
+      "/home/skripko_a/rails_projects/chat/app/models/user_category.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/skripko_a/rails_projects/chat/app/controllers/categories_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/home/skripko_a/rails_projects/chat/app/controllers/application_controller.rb": [
         1,
         1,
         1,
         1,
         1,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/home/skripko_a/rails_projects/chat/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/skripko_a/rails_projects/chat/app/helpers/categories_helper.rb": [
+        1,
+        null
+      ],
+      "/home/skripko_a/rails_projects/chat/app/helpers/comments_helper.rb": [
+        1,
+        null
+      ],
+      "/home/skripko_a/rails_projects/chat/app/helpers/conversations_helper.rb": [
+        1,
+        null
+      ],
+      "/home/skripko_a/rails_projects/chat/app/helpers/events_helper.rb": [
+        1,
+        null
+      ],
+      "/home/skripko_a/rails_projects/chat/app/helpers/likes_helper.rb": [
+        1,
+        null
+      ],
+      "/home/skripko_a/rails_projects/chat/app/helpers/pictures_helper.rb": [
+        1,
+        null
+      ],
+      "/home/skripko_a/rails_projects/chat/app/helpers/user_categories_helper.rb": [
+        1,
+        null
+      ],
+      "/home/skripko_a/rails_projects/chat/app/models/event.rb": [
         1,
         1,
-        6,
+        1,
+        3,
+        null
+      ],
+      "/home/skripko_a/rails_projects/chat/app/channels/application_cable/connection.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
+        2,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/skripko_a/rails_projects/chat/app/channels/chat_notifications_channel.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        0,
+        null,
+        null
+      ],
+      "/home/skripko_a/rails_projects/chat/app/channels/application_cable/channel.rb": [
+        1,
+        1,
         null,
         null
       ],
@@ -100,30 +243,6 @@
         0
       ],
       "/home/skripko_a/rails_projects/chat/app/controllers/user_categories_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/skripko_a/rails_projects/chat/app/controllers/application_controller.rb": [
-        0,
-        0,
-        0,
-        0,
         0,
         0,
         0,
@@ -554,47 +673,6 @@
         0,
         0,
         0,
-        0,
-        0,
-        0
-      ],
-      "/home/skripko_a/rails_projects/chat/app/controllers/categories_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         0
       ],
       "/home/skripko_a/rails_projects/chat/app/mailers/application_mailer.rb": [
@@ -615,51 +693,6 @@
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/skripko_a/rails_projects/chat/app/channels/chat_notifications_channel.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/skripko_a/rails_projects/chat/app/channels/application_cable/connection.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/home/skripko_a/rails_projects/chat/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
@@ -688,45 +721,6 @@
         0,
         0
       ],
-      "/home/skripko_a/rails_projects/chat/app/helpers/conversations_helper.rb": [
-        0,
-        0
-      ],
-      "/home/skripko_a/rails_projects/chat/app/helpers/likes_helper.rb": [
-        0,
-        0
-      ],
-      "/home/skripko_a/rails_projects/chat/app/helpers/application_helper.rb": [
-        0,
-        0
-      ],
-      "/home/skripko_a/rails_projects/chat/app/helpers/user_categories_helper.rb": [
-        0,
-        0
-      ],
-      "/home/skripko_a/rails_projects/chat/app/helpers/categories_helper.rb": [
-        0,
-        0
-      ],
-      "/home/skripko_a/rails_projects/chat/app/helpers/comments_helper.rb": [
-        0,
-        0
-      ],
-      "/home/skripko_a/rails_projects/chat/app/helpers/events_helper.rb": [
-        0,
-        0
-      ],
-      "/home/skripko_a/rails_projects/chat/app/helpers/pictures_helper.rb": [
-        0,
-        0
-      ],
-      "/home/skripko_a/rails_projects/chat/app/models/event.rb": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
       "/home/skripko_a/rails_projects/chat/app/models/conversations_user.rb": [
         0,
         0,
@@ -752,13 +746,17 @@
         0,
         0
       ],
-      "/home/skripko_a/rails_projects/chat/app/models/user_category.rb": [
-        0,
+      "/home/skripko_a/rails_projects/chat/app/models/application_record.rb": [
         0,
         0,
         0
       ],
-      "/home/skripko_a/rails_projects/chat/app/models/application_record.rb": [
+      "/home/skripko_a/rails_projects/chat/app/models/comment.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0
@@ -835,6 +833,6 @@
         0
       ]
     },
-    "timestamp": 1484299662
+    "timestamp": 1484838196
   }
 }

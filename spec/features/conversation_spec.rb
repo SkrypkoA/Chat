@@ -11,6 +11,7 @@ RSpec.feature "Conversation", type: :feature do
   after(:all) do
     User.delete_all
     Conversation.delete_all
+    Message.delete_all
   end
 
   describe "home page", js: true, type: :feature do
@@ -27,7 +28,6 @@ RSpec.feature "Conversation", type: :feature do
       expect(find('.user-list').visible?).to be true
       fill_in ("message_content"), with: "some message"
       find('input.message_button').click
-      #sleep(140)
       expect { find('input.message_button').click}.to change(Message, :count).by(1)
 
     end
