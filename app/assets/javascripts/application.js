@@ -16,3 +16,5 @@
 //= require js.cookie
 //= require cable
 //= require bootstrap
+//= require jquery.bxslider
+//= require jquery.bxslider

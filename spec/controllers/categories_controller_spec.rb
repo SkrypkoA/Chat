@@ -40,7 +40,6 @@ RSpec.describe CategoriesController, type: :controller do
     request.env["HTTP_REFERER"] = root_path
     expect { post :create, { category: { name: "Category", description: "test category" } } }.to change(Category, :count).by(0)
     sign_in user
-
     expect { post :create, { category: { name: "Category", description: "test category" } } }.to change(Category, :count).by(1)
   end
 end

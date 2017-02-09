@@ -8,11 +8,16 @@ class CategoriesController < ApplicationController
 
   def show
     @pictures = @category.pictures
-    @picture = @category.pictures.build
+    respond_to do |format|
+      format.html
+      format.json do
+        render json: { html: (render_to_string partial: 'categories/show', formats: [:html], layout: false) }
+      end
+    end
   end
 
   def create
-    Category.create!(set_new_category) if signed_in?
+    Category.create!(set_new_category)
     redirect_to :back
   end
 
@@ -28,10 +33,11 @@ class CategoriesController < ApplicationController
 
   private
   def set_category
-    @category = Category.find_by(name: params[:id])
+    puts params[:id]
+    @category = Category.find_by(slug: params[:id])
   end
 
   def set_new_category
-    params.require(:category).permit(:name,:description)
+    params.require(:category).permit(:name, :description)
   end
 end

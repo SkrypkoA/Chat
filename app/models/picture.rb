@@ -11,7 +11,7 @@ class Picture < ApplicationRecord
   after_save :add_picture_notification
 
   def add_picture_notification
-    self.category.users.each do |user|
+    category.users.each do |user|
       UserMailer.add_picture_notification(user, self).deliver_now
     end
   end

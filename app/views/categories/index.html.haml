@@ -1,14 +1,14 @@
-%h1 All categories
+%h1.brand-name All categories
 
 %ul
   - @categories.each do |category|
-    .categories
-      .col-md-10.cal-offset-1
-        = link_to category.name, category_path(category), {class: "btn btn-default btn-lg btn-block"}
+    .categories.row
+      .col-md-10
+        = link_to category.name, category_path(category), {class: "btn btn-default btn-lg btn-block category"}
       - unless category.users.include?(current_user)
         .col-md-1
-          = link_to "follow", create_relation_category_path(category), {class: "btn btn-default btn-lg btn-block", method: :post}
+          = link_to "", create_relation_category_path(category), {class: "btn btn-default btn-lg btn-block glyphicon glyphicon-star-empty", method: :post}
       - else
         .col-md-1
-          = link_to "unfollow", delete_relation_category_path(category), {class: "btn btn-default btn-lg btn-block", method: :delete}
+          = link_to "", delete_relation_category_path(category), {class: "btn btn-default btn-lg btn-block glyphicon glyphicon-star", method: :delete}
 = render "categories/create"

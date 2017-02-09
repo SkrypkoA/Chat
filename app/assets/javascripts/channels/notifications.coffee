@@ -56,10 +56,8 @@ $(document).ready ->
       user_email: $('.email').text().trim()
     },
       connected: ->
-        #console.log "CONNECTED"
       disconnected: ->
       received: (data) ->
-        #console.log "RECEIVE"
         if $(".conversation[data-conversation = #{data['channel_id']}]").length > 0
           $(".conversation[data-conversation = #{data['channel_id']}]>.conversation-messages").append(data['message'])
           $(".conversation[data-conversation=#{data['channel_id']}] .conversation-messages").scrollTop($(".conversation[data-conversation=#{data['channel_id']}] .conversation-messages").prop("scrollHeight"))

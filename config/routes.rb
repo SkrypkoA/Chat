@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   resources :messages, only: [:index]
 
-  resources :conversations, only: [:create, :show, :show_partial] do
+  resources :conversations, only: [:index, :create, :show, :show_partial] do
     match 'show_partial', to: 'conversations#show_partial', on: :member, via: :get
   end
 
