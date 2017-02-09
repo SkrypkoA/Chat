@@ -4,7 +4,7 @@
     %meta{content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type'}
   %body
     %h1 NEW PICTURE!
-    %p== "new picture in category #{@picture.category.name}"
+    %p "new picture in category"  + #{@picture.category.name}
     = link_to image_tag(attachments['image.jpg'].url, class: 'picture'), category_picture_url(@picture.category, @picture)
 
 

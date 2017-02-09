@@ -1,7 +1,8 @@
-class ChatNotificationsChannel < ApplicationCable::Channel
+class ChatChannel < ApplicationCable::Channel
   def subscribed
-    puts "## SUBSCRIBED notification_#{params['user_email']}"
-    stream_from "notification_#{params['user_email']}"
+    puts "## SUBSCRIBED conversation_#{params['chat_id']}"
+    NotificationsBroadcastJob.perform_later(current_user,Conversation.find(params['chat_id']))
+    stream_from "conversation_#{params['chat_id']}"
   end
 
   def unsubscribed

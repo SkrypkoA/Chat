@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    Category.create!(set_new_category) if signed_in?
+    Category.create!(set_new_category)
     redirect_to :back
   end
 
