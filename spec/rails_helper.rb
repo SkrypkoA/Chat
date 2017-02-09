@@ -9,6 +9,9 @@ require 'devise'
 require "capybara/dsl"
 require "selenium-webdriver"
 require 'capybara/rspec'
+require 'simplecov'
+#SimpleCov.start 'rails'
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -29,6 +32,7 @@ require 'capybara/rspec'
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
+ActiveJob::Base.queue_adapter = :test
 
 Capybara.default_max_wait_time = 15
 #Capybara.default_selector = :css
@@ -46,6 +50,7 @@ Capybara.default_max_wait_time = 15
 # end
 Capybara.server = :puma
 Capybara.ignore_hidden_elements = false
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -82,7 +87,20 @@ RSpec.configure do |config|
   # config.include Devise::Test::IntegrationHelpers, type: :controller
   # config.include Devise::Test::IntegrationHelpers, type: :view
   # config.include Devise::TestHelpers, type: :controller
-  #config.include Devise::Test::ControllerHelpers
-  config.include Devise::Test::IntegrationHelpers
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::IntegrationHelpers, type: :feature
 
 end
+
+class ActiveRecord::Base
+  mattr_accessor :shared_connection
+  @@shared_connection = nil
+
+  def self.connection
+    @@shared_connection || retrieve_connection
+  end
+end
+
+# Forces all threads to share the same connection. This works on
+# Capybara because it starts the web server in a thread.
+ActiveRecord::Base.shared_connection = ActiveRecord::Base.connection

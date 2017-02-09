@@ -21,5 +21,6 @@
 .byebug_history
 # Ignore uploaded pictures
 /public/picture*
+/public/uploads*
 # Ignore idea
 /.idea

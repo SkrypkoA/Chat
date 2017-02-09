@@ -1,7 +1,5 @@
 class ConversationsController < ApplicationController
-  def index
-
-  end
+  before_action :authenticate_user!
 
   def show
     @conversation = Conversation.find(params[:id])

@@ -58,6 +58,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'simplecov'
+  gem 'rails-controller-testing'
 end
 
 group :development do
