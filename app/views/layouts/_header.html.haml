@@ -1,4 +1,4 @@
-%header{class: "navbar navbar-fixed-top navbar-inverse"}
+%header{class: "navbar navbar-fixed-top navbar-inverse collapse navbar-collapse"}
   %h5
     .navbar-inner
       %nav
@@ -21,8 +21,8 @@
             = link_to "ru", url_for(locale: :ru)
           - if user_signed_in?
             %li
-              .email
-                = current_user.email
+              -#= current_user.email
+              = link_to current_user.email, "#"
             %li
               = link_to "Sign out", destroy_user_session_path
           - else

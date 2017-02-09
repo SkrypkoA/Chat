@@ -7,10 +7,11 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %script{src: 'https://www.google.com/recaptcha/api.js'}
+    %link{:href => "https://fonts.googleapis.com/css?family=Josefin+Slab", :rel => "stylesheet"}/
   %body
     = render 'layouts/header'
-    .users.col-md-1
+    -#.users.col-md-1
       = render 'layouts/users_all'
-    .body.col-md-11
+    .body.col-md-8.col-md-offset-2
       = yield
     = render 'layouts/footer'

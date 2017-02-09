@@ -10,14 +10,15 @@ RSpec.describe Picture, type: :model do
     it { expect(@picture).to respond_to(:likes_count) }
     it { expect(@picture).to respond_to(:likes) }
     it { expect(@picture).to respond_to(:comments) }
+    is_expected { respond_to(:comments) }
   end
 
-  describe "check present location" do
+  describe "the location must be present" do
     before {@picture.location = nil}
     it { expect(@picture).not_to be_valid }
   end
 
-  describe "check send mail after save" do
+  describe "sent mail after saving" do
     before do
       @picture.category.users << @picture.user
     end
@@ -50,7 +51,7 @@ RSpec.describe Picture, type: :model do
     end
   end
 
-  describe "check order" do
+  describe "pictures must be sorted by descending number of likes" do
     it do
       @picture.save
       @user = FactoryGirl.create(:user)

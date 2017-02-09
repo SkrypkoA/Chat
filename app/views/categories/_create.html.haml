@@ -1,7 +1,11 @@
-.new-category.col-md-12
-  = form_for [Category.new] do |category|
-    %p Name
-    = category.text_field :name
-    %p Description
-    = category.text_field :description
-    = category.submit "Create Category"
+.new-category.col-md-10.col-md-offset-2
+  = form_for [Category.new], html: {class: 'form-inline'} do |category|
+    .form-group
+      .input-group
+        %label.input-group-addon Name
+        = category.text_field :name, class: 'form-control'
+      .input-group
+        %label.input-group-addon Description
+        = category.text_field :description, class: 'form-control'
+
+    = category.submit "Create Category", class: 'btn btn-default'

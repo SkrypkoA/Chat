@@ -1,3 +1,101 @@
 // Place all the styles related to the Categories controller here.
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.bx-wrapper .bx-pager {
+  bottom: -95px;
+}
+
+.bx-wrapper .bx-pager a {
+  border: solid #ccc 1px;
+  display: block;
+  margin: 0 5px;
+  //padding: 3px;
+  border-radius: 500px;
+}
+
+.bx-wrapper .bx-pager a:hover,
+.bx-wrapper .bx-pager a.active {
+  border: solid #5280DD 2px;
+  border-radius: 500px;
+}
+
+.bx-wrapper {
+  margin-bottom: 120px;
+  //height: 400px;
+}
+
+.bx-viewport{
+  height: 580px !important;
+  position: unset !important;
+}
+
+.picture {
+  width: 100%;
+  border-radius: 1%;
+}
+
+.pager-picture.img-circle{
+  border-radius: 500px;
+  height: 64px;
+  width: 64px;
+}
+
+.bxslider{
+  li{
+    width: 858px !important;
+  }
+}
+
+.picture-upload-form{
+  display: inline-flex;
+}
+
+.picture-upload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.picture-upload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.brand-name{
+  text-align: center;
+  font-family: "Josefin Slab", serif !important;
+}
+
+.category-dropdown{
+  width: 100%;
+  .dropdown-menu{
+    width: 350px;
+  }
+}
+
+.vertical-alignment-helper {
+  display:table;
+  height: 100%;
+  width: 100%;
+}
+
+.vertical-align-center {
+  /* To center vertically */
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-content {
+  /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+  width:inherit;
+  height:inherit;
+  /* To center horizontally */
+  margin: 0 auto;
+}
