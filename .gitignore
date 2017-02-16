@@ -23,4 +23,4 @@
 /public/picture*
 /public/uploads*
 # Ignore idea
-/.idea
+/.idea/*
