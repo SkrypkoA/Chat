@@ -1096,6 +1096,8 @@
 				// Call user resize handler
 				slider.settings.onSliderResize.call(el, slider.active.index);
 			}
+
+			console.log("RESIZE")
 		}
 
 		/**
@@ -1300,6 +1302,8 @@
 				populatePager();
 				updatePagerActive(slider.active.index);
 			}
+
+			console.log("REDRAW")
 		}
 
 		/**
@@ -1323,6 +1327,7 @@
 			if(slider.controls.autoEl) slider.controls.autoEl.remove();
 			clearInterval(slider.interval);
 			if(slider.settings.responsive) $(window).unbind('resize', resizeWindow);
+			console.log("DESTROY")
 		}
 
 		/**
@@ -1333,6 +1338,11 @@
 			el.destroySlider();
 			init();
 		}
+
+		el.resizeWindowForc = function () {
+			resizeWindow()
+			console.log("AAAAA")
+        }
 
 		init();
 

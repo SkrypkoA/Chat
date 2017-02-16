@@ -22,13 +22,26 @@ $(document).ready ->
       dataType: 'json').done((json) ->
       $('.modal-body').html(json.html)
       $('#myModal').modal 'show'
-      $('.bxslider').bxSlider(
+#      slider.destroySlider()
+      if typeof window.slider != 'undefined'
+        window.slider.destroySlider()
+      window.slider = $('.bxslider').bxSlider(
         #adaptiveHeight: true
+#        slideWidth: 1000
+#        responsive: false
         buildPager: (slideIndex) ->
           src = $(".picture##{slideIndex}").attr('src')
           html = "<img src='#{src}' class='pager-picture img-circle'>"
       )
+      window.slider.redrawSlider()
+
+#      slider.setPositionProperty(0, 'reset', 0)
+      #slider.redrawSlider
+#      slider.destroySlider()
+#      slider.resizeWindowForc()
+      console.log(window.slider)
       $('.dropdown-toggle').dropdown()
+      #console.log("done")
     )
     return
   )

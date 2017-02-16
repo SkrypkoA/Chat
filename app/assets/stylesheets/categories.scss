@@ -21,7 +21,7 @@
 
 .bx-wrapper {
   margin-bottom: 120px;
-  padding-left: 10px !important;
+  //padding-left: 10px !important;
   //height: 400px;
 }
 
@@ -42,9 +42,9 @@
 }
 
 .bxslider{
-  li{
-    width: 858px !important;
-  }
+  //li{
+  //  width: 858px !important;
+  //}
 }
 
 //.picture-upload-form{
@@ -81,22 +81,22 @@
   }
 }
 
-.vertical-alignment-helper {
-  display:table;
-  height: 100%;
-  width: 100%;
-}
-
-.vertical-align-center {
-  /* To center vertically */
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.modal-content {
-  /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
-  width:inherit;
-  height:inherit;
-  /* To center horizontally */
-  margin: 0 auto;
-}
+//.vertical-alignment-helper {
+//  display:table;
+//  height: 100%;
+//  width: 100%;
+//}
+//
+//.vertical-align-center {
+//  /* To center vertically */
+//  display: table-cell;
+//  vertical-align: middle;
+//}
+//
+//.modal-content {
+//  /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+//  width:inherit;
+//  height:inherit;
+//  /* To center horizontally */
+//  margin: 0 auto;
+//}
