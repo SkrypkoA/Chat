@@ -12,7 +12,7 @@
 
 default: &default
   adapter: postgresql
-  user: skripko
+  user: skripko_a
   password: root
   pool: 5
   timeout: 5000
