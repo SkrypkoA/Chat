@@ -58,6 +58,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'rvm-capistrano'
   gem 'capistrano-bundler'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
