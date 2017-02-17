@@ -11,6 +11,14 @@ set :repo_url, "git@github.com:SkrypkoA/Chat.git"
 # set :deploy_to, "/var/www/my_app_name"
 set :deploy_to, "/home/chatuser/apps/chat"
 set :local_user, "chatuser"
+
+after 'deploy:publishing', 'deploy:restart'
+
+namespace :deploy do
+  task :restart do
+    invoke 'unicorn:reload'
+  end
+end
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
