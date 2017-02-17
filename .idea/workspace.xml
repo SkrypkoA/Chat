@@ -78,8 +78,8 @@
       <file leaf-file-name="production.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/unicorn/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+            <state relative-caret-position="555">
+              <caret line="37" column="3" lean-forward="true" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -682,12 +682,12 @@
       <workItem from="1487163113645" duration="3989000" />
       <workItem from="1487228757800" duration="22133000" />
       <workItem from="1487318133575" duration="1437000" />
-      <workItem from="1487324536591" duration="5589000" />
+      <workItem from="1487324536591" duration="6430000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="750693000" />
+    <option name="totallyTimeSpent" value="751534000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1109,8 +1109,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/unicorn/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        <state relative-caret-position="555">
+          <caret line="37" column="3" lean-forward="true" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
           <folding />
         </state>
       </provider>
