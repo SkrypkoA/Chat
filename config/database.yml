@@ -12,8 +12,8 @@
 
 default: &default
   adapter: postgresql
-  user: skripko_a
-  password: root
+  user: "<%=ENV['DEFAULT_DB_USER']%>"
+  password: "<%=ENV['DEFAULT_DB_PASS']%>"
   pool: 5
   timeout: 5000
 
@@ -39,8 +39,8 @@ test:
 
 production:
   adapter: postgresql
-  user: chatuser
-  password: 123456
+  user: "<%=ENV['PRODUCTION_DB_USER']%>"
+  password: "<%=ENV['PRODUCTION_DB_PASS']%>"
   pool: 5
   timeout: 5000
   database: chat_production
