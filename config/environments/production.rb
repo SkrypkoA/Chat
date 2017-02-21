@@ -30,8 +30,8 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = true
-  Rails.application.config.assets.precompile += %w(*.svg *.eot *.woff *.woff2 *.ttf)
+  config.assets.compile = false
+  # Rails.application.config.assets.precompile += %w(*.svg *.eot *.woff *.woff2 *.ttf)
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
@@ -92,7 +92,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #########
-  config.serve_static_assets = false
+  # config.serve_static_assets = false
   config.assets.digest = true
   config.assets.paths << "#{Rails}/vendor/assets/fonts"
 end
