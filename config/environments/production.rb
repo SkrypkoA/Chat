@@ -94,4 +94,6 @@ Rails.application.configure do
   #########
   # config.serve_static_assets = false
   config.assets.digest = true
+
+  config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
 end
