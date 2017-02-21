@@ -13,9 +13,6 @@ set :deploy_to, "/home/chatuser/apps/chat"
 set :local_user, "chatuser"
 set :assets_roles, [:web, :app]
 
-set :normalize_asset_timestamps, %w{public/images public/javascripts public/stylesheets}
-set :keep_assets, 2
-
 after 'deploy:publishing', 'deploy:restart'
 
 namespace :deploy do
