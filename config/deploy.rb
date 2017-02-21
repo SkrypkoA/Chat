@@ -11,6 +11,10 @@ set :repo_url, "git@github.com:SkrypkoA/Chat.git"
 # set :deploy_to, "/var/www/my_app_name"
 set :deploy_to, "/home/chatuser/apps/chat"
 set :local_user, "chatuser"
+set :assets_roles, [:web, :app]
+
+set :normalize_asset_timestamps, %w{public/images public/javascripts public/stylesheets}
+set :keep_assets, 2
 
 after 'deploy:publishing', 'deploy:restart'
 
@@ -34,6 +38,7 @@ append :linked_files, ".env" #"config/database.yml", "config/secrets.yml"
 
 # Default value for linked_dirs is []
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system", "public/picture"
+
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
