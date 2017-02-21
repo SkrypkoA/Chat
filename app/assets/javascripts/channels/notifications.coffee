@@ -5,6 +5,7 @@ getChatPartial = (conversation_id) ->
     dataType: 'json').done((json) ->
     $('.mini-chat').append(json.html)
     $(".conversation[data-conversation=#{conversation_id}] .conversation-messages").scrollTop($(".conversation[data-conversation=#{conversation_id}] .conversation-messages").prop("scrollHeight"))
+    $('.dropdown-toggle').dropdown()
     return
   )
   return
