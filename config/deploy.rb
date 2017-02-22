@@ -13,11 +13,11 @@ set :deploy_to, "/home/chatuser/apps/chat"
 set :local_user, "chatuser"
 set :assets_roles, [:web, :app]
 
-after 'deploy:publishing'#, 'deploy:restart'
+after 'deploy:publishing', 'deploy:restart'
 
 namespace :deploy do
   task :restart do
-    invoke 'unicorn:restart'
+    invoke 'unicorn:reload'
   end
 end
 # Default value for :format is :airbrussh.
