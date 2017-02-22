@@ -15,11 +15,11 @@ set :assets_roles, [:web, :app]
 
 after 'deploy:publishing', 'deploy:restart'
 
-namespace :deploy do
-  task :restart do
-    invoke 'unicorn:restart'
-  end
-end
+# namespace :deploy do
+#   task :restart do
+#     invoke 'unicorn:restart'
+#   end
+# end
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
