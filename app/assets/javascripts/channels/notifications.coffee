@@ -52,12 +52,13 @@ $(document).ready ->
   console.log "notification ws"
   if $('.email').length > 0
     email = $('.email')
-    App.cable = ActionCable.createConsumer("/cable")
+    App.notify_chat = ActionCable.createConsumer("/cable")
     App.notify_chat = App.cable.subscriptions.create {
       channel: "ChatNotificationsChannel"
       user_email: $('.email').text().trim()
     },
       connected: ->
+        console.log "CONNECTED"
       disconnected: ->
       received: (data) ->
         if $(".conversation[data-conversation = #{data['channel_id']}]").length > 0
